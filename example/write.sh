@@ -6,7 +6,7 @@
 # usage: write.sh socket [file]
 #
 # i.e.
-# echo "{\"command\":\"clear\"}" | write.sh ../display.sock
+# echo "Hello World" | write.sh ../display.sock
 
 [ $# -lt 1 ] && { echo "Must specify display server socket."; exit 1; }
 
