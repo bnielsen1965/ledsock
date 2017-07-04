@@ -15,7 +15,10 @@
 
 # convert input into command message
 str=`cat $input`
+
+IFS=
 cmd="{\"command\":\"write\",\"string\":\"${str//\"/\\\"}\"}"
+unset IFS
 
 # send command to socket
-echo $cmd | socat - $1
+echo "$cmd" | socat - $1
