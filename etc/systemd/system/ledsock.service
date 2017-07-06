@@ -1,0 +1,17 @@
+[Unit]
+Description=Service to control OLED through ledsock.
+After=network.target
+
+[Service]
+# Update these settings for the final service location and user
+User=pi
+WorkingDirectory=/home/pi/ledsock
+ExecStart=/home/pi/ledsock/ledsock.sh
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
+
